@@ -13,6 +13,6 @@ cd ~/Dev/
 git clone https://github.com/airtonix/factory-boy-django-tests/
 cd factory-boy-django-tests
 mkvirtualenv `basename $PWD`
-pip install ./requirements.txt
+pip install -r ./requirements.txt
 python ./runtests.py
 ```
