@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-__contributers__ = [
-    'Zenobius Jiricek <airtonix@gmail.com>',
-]
-
 import logging
 
 from django.test import TestCase
@@ -17,12 +13,13 @@ logger = logging.getLogger('factory')
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
+db_logger = logging.getLogger('django.db.backends')
+db_logger.setLevel(logging.DEBUG)
+db_logger.addHandler(logging.StreamHandler())
+
+
 
 class ProductTypeTest(TestCase):
-
-    # def setUp(self):
-
-
 
     def test_product_type(self):
         foundry.SluggedThingFactory.create_batch(45)
